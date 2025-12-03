@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ramdy Car Services LLC</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=Archivo:wght@300;400;700&family=Bebas+Neue&family=Monoton&family=Lobster&family=Space+Mono:wght@400;700&family=Playfair+Display:wght@600;800&family=Righteous&family=Rubik+Glitch&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --head: 'Bebas Neue', 'Unbounded', sans-serif;
+      --body: 'Archivo', ui-sans-serif, system-ui;
+      --fun: 'Monoton', cursive;
+    }
+    body { font-family: var(--body); }
+    .font-head { font-family: var(--head); }
+    .font-fun { font-family: var(--fun); }
+    .neon { text-shadow: 0 0 10px rgba(255,0,0,.85), 0 0 28px rgba(255,255,255,.45); }
+  </style>
+</head>
+<body class="bg-black text-white min-h-screen selection:bg-red-600/40">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-40 backdrop-blur bg-black/70 border-b border-white/10">
+    <div class="max-w-6xl mx-auto flex items-center justify-between px-4 py-3">
+      <div class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded-2xl bg-red-600 grid place-items-center shadow-[0_0_40px_rgba(220,38,38,0.6)]">
+           <img src="ramdy.jpg" alt="Profile Picture" class="image-style">
+        </div>
+        <div class="leading-tight">
+        
+          <div class="font-black text-lg font-head">Ramdy Car Services</div>
+        </div>
+      </div>
+      <nav class="hidden md:flex items-center gap-6 text-sm">
+        <a href="#services" class="text-white/80 hover:text-white transition">Services</a>
+        <a href="#about" class="text-white/80 hover:text-white transition">About</a>
+        <a href="#reviews" class="text-white/80 hover:text-white transition">Reviews</a>
+        <a href="#contact" class="text-white/80 hover:text-white transition">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(220,38,38,0.25),transparent_60%)]"></div>
+    <div class="relative max-w-6xl mx-auto px-4 py-20 md:py-28 grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <p class="text-red-500 tracking-widest text-xs md:text-sm uppercase mb-3 font-head"></p>
+        <h1 class="text-4xl md:text-6xl font-black leading-[1.05] mb-4 font-head">Mechanic Service</h1>
+        <p class="text-white/80 text-lg md:text-xl mb-8 max-w-prose">Routine Maintenance, Engine Diagnostics & Repair, Inspection & Diagnostics, Performance Upgrades & Customizations, Emergency Repairs, etc — all executed with precision and style.</p>
+        <div class="flex flex-wrap items-center gap-3">
+          <a href="#contact" class="rounded-2xl bg-red-600 hover:bg-red-700 text-white px-6 py-3 md:py-4 text-base md:text-lg shadow-[0_0_50px_rgba(220,38,38,0.5)] inline-flex items-center gap-2">Book Appointment</a>
+          <a href="tel:+18015550123" class="rounded-2xl border border-white/20 text-white hover:bg-white/10 px-5 py-3 inline-flex items-center gap-2">Call Now</a>
+        </div>
+      </div>
+      <div class="relative hidden md:block">
+        <div class="absolute -inset-6 bg-red-600/20 blur-3xl rounded-full"></div>
+        <div class="bg-gradient-to-br from-zinc-900 to-black border border-white/10 rounded-3xl p-8">
+          <div class="flex items-center gap-4">
+            <div class="text-4xl font-fun neon">R</div>
+            <div class="text-xl font-semibold font-head">Ramdy Car Services</div>
+          </div>
+          <div class="mt-6 grid grid-cols-2 gap-4 text-sm">
+            <div class="p-4 rounded-2xl bg-white/5 border border-white/10"><div class="text-white/60">Certified</div><div class="font-semibold">ASE / OEM</div></div>
+            <div class="p-4 rounded-2xl bg-white/5 border border-white/10"><div class="text-white/60">Turnaround</div><div class="font-semibold">24–48h</div></div>
+            <div class="p-4 rounded-2xl bg-white/5 border border-white/10"><div class="text-white/60">Warranty</div><div class="font-semibold">12 mo</div></div>
+            <div class="p-4 rounded-2xl bg-white/5 border border-white/10"><div class="text-white/60">Shuttle</div><div class="font-semibold">Yes</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="border-t border-white/10 bg-zinc-950/60">
+    <div class="max-w-6xl mx-auto px-4 py-16">
+      <h2 class="text-3xl md:text-4xl font-black mb-8 font-head">Our Signature Services</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div class="bg-black/60 border border-white/10 rounded-3xl p-6 hover:border-red-600/60 transition">
+          <div class="w-10 h-10 rounded-xl bg-red-600/20 grid place-items-center mb-4">🔧</div>
+          <div class="font-semibold text-lg">Complete Routine Maintenance</div>
+          <p class="text-white/70 text-sm mt-1">Oil Changes, Tire Rotation & Balancing, Brake Checks & Fluid Changes, Air Filter Replacement & Battery Testing & Replacement</p>
+        </div>
+        <div class="bg-black/60 border border-white/10 rounded-3xl p-6 hover:border-red-600/60 transition">
+          <div class="w-10 h-10 rounded-xl bg-red-600/20 grid place-items-center mb-4">🏁</div>
+          <div class="font-semibold text-lg">Repairs</div>
+          <p class="text-white/70 text-sm mt-1">Engine Diagnostics & Repair, Transmission Repair,  Suspension & Steering,  Cooling System & Radiator.</p>
+        </div>
+        <div class="bg-black/60 border border-white/10 rounded-3xl p-6 hover:border-red-600/60 transition">
+          <div class="w-10 h-10 rounded-xl bg-red-600/20 grid place-items-center mb-4">🚗</div>
+          <div class="font-semibold text-lg">Brakes & Suspension</div>
+          <p class="text-white/70 text-sm mt-1">Pads/rotors, calipers, coilovers, alignments.</p>
+        </div>
+        <div class="bg-black/60 border border-white/10 rounded-3xl p-6 hover:border-red-600/60 transition">
+          <div class="w-10 h-10 rounded-xl bg-red-600/20 grid place-items-center mb-4">✨</div>
+          <div class="font-semibold text-lg">Emergency Repairs</div>
+          <p class="text-white/70 text-sm mt-1">Check Engine Light, Diagnostic Scanning or any type of problem that need quit solution.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="border-t border-white/10">
+    <div class="max-w-6xl mx-auto px-4 py-16 grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <h2 class="text-3xl md:text-4xl font-black mb-4 font-head">Elegance meets engineering</h2>
+        <p class="text-white/80 text-lg">We combine dealer‑level tools with boutique service. Transparent pricing, OEM or premium aftermarket parts, and craftsmanship that honors your vehicle.</p>
+      </div>
+      <div class="aspect-[4/3] rounded-3xl]">
+        <img src="ramdy.jpg" alt="Profile Picture" class="image-style">
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section id="reviews" class="border-t border-white/10">
+    <div class="max-w-6xl mx-auto px-4 py-16">
+      <h2 class="text-3xl md:text-4xl font-black mb-8 font-head">Client Reviews</h2>
+      <div class="grid md:grid-cols-3 gap-4">
+        <div class="bg-black/60 border border-white/10 rounded-3xl p-6">
+          <div class="flex items-center gap-3 mb-3"><div class="w-8 h-8 rounded-full bg-red-600/30"></div><div class="font-semibold">★★★★★</div></div>
+          <p class="text-white/80">Flawless brake job and immaculate detail.</p>
+        </div>
+        <div class="bg-black/60 border border-white/10 rounded-3xl p-6">
+          <div class="flex items-center gap-3 mb-3"><div class="w-8 h-8 rounded-full bg-red-600/30"></div><div class="font-semibold">★★★★★</div></div>
+          <p class="text-white/80">They diagnosed in minutes what others missed.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="border-t border-white/10 bg-zinc-950/60">
+    <div class="max-w-6xl mx-auto px-4 py-16 grid md:grid-cols-2 gap-10">
+      <div>
+        <h2 class="text-3xl md:text-4xl font-black mb-4 font-head">Contact & Hours</h2>
+        <p class="text-white/70 mb-6">Questions? Want a quote? Reach out — we respond fast.</p>
+        <div class="space-y-3 text-white/80">
+          <div class="flex items-center gap-3">📍 1499 N State St, Provo, UT</div>
+          <div class="flex items-center gap-3">📞 <a href="tel:+18015550123" class="hover:underline">(801) 358-3549</a></div>
+          <div class="flex items-center gap-3">✉️ <a href="mailto:service@ramdycars.com" class="hover:underline">ramdy1603@gmail.com</a></div>
+          <div class="flex items-start gap-3">🕒
+            <div>
+              <div><span class="w-20 inline-block text-white/60">Mon–Fri</span> 9:00a – 8:00p</div>
+              <div><span class="w-20 inline-block text-white/60">Saturday</span> 10:00a – 2:00p</div>
+              <div><span class="w-20 inline-block text-white/60">Sunday</span> Closed</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <form class="p-6 rounded-3xl border border-white/10 bg-black/60 space-y-4" onsubmit="event.preventDefault();alert('Request sent! We\'ll be in touch.');this.reset();">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <input placeholder="Name" class="px-4 py-3 rounded-xl bg-zinc-900 border border-white/10 focus:border-red-600 outline-none" />
+          <input placeholder="Email" type="email" class="px-4 py-3 rounded-xl bg-zinc-900 border border-white/10 focus:border-red-600 outline-none" />
+          <input placeholder="Phone" class="px-4 py-3 rounded-xl bg-zinc-900 border border-white/10 focus:border-red-600 outline-none md:col-span-2" />
+          <textarea placeholder="What does your car need?" rows="5" class="px-4 py-3 rounded-xl bg-zinc-900 border border-white/10 focus:border-red-600 outline-none md:col-span-2"></textarea>
+        </div>
+        <button type="submit" class="rounded-2xl bg-red-600 hover:bg-red-700 text-white w-full py-3 text-base">Send Request</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="border-t border-white/10">
+    <div class="max-w-6xl mx-auto px-4 py-10 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="text-white/60 text-sm">© <span id="year"></span> Ramdy Car Services</div>
+      <div class="text-center text-sm font-head">Certified techs • Premium parts • Transparent quotes</div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

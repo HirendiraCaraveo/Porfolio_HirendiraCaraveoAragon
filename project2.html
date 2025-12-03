@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project 2 · TopPlate/Freelance</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #050816;
+      --accent: #ff4f8b;
+      --accent-2: #46e6ff;
+      --text-main: #f9fafb;
+      --text-muted: #9ca3af;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 0% 0%, rgba(70, 230, 255, 0.18), transparent 55%),
+        radial-gradient(circle at 100% 100%, rgba(255, 79, 139, 0.18), transparent 55%),
+        var(--bg);
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 32px 16px;
+    }
+
+    .page-shell {
+      width: 100%;
+      max-width: 900px;
+      background: rgba(15, 23, 42, 0.96);
+      border-radius: 24px;
+      padding: 28px 22px 24px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.55);
+    }
+
+    .kicker {
+      font-size: 12px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent-2);
+      margin-bottom: 6px;
+    }
+
+    h1 {
+      font-size: clamp(26px, 3vw, 32px);
+      margin-bottom: 6px;
+      color:#46e6ff;
+    }
+
+    .meta {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 18px;
+    }
+
+    .badge {
+      border-radius: 999px;
+      padding: 4px 10px;
+      border: 1px solid rgba(148, 163, 184, 0.8);
+    }
+
+    .body {
+      font-size: 14px;
+      color: var(--text-main);
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .section-title {
+      font-size: 18px;
+      font-weight: 600;
+      margin-top: 12px;
+      margin-bottom: 4px;
+      color:#46e6ff;
+    }
+
+    ul {
+      margin-left: 18px;
+      margin-top: 4px;
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+
+    .images img {
+      width: 100%;
+      border-radius: 14px;
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.45);
+    }
+
+
+    a {
+      color: var(--accent-2);
+      text-decoration: none;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      margin-top: 8px;
+    }
+  </style>
+</head>
+<body>
+  <main class="page-shell">
+    <div class="kicker">Project 2</div>
+    <h1>TopPlate App</h1>
+    <div class="meta">
+      <span class="badge">UI · Web</span>
+      <span>Role: Designer &amp; Developer</span>
+    </div>
+
+    <div class="body">
+      <p>
+       Finding new places to eat has never been easier! Join on your own or together 
+       and pick where you want to eat.
+       Pick your screenname, create a group, swipe on places to eat, and go enjoy your meal!
+      </p>
+
+      <div class="section-title">What Happened</div>
+    <p>As an International student I need to create a profile like the other student with more
+         experience and something that can help me to stand up. However,
+         I have some limitations as you know. My friend and I came up with an idea of an app that 
+         would try to see if that works. This app is free. </p>
+    <p>    
+        Our main challenge was time because he lives in another state and the time over 
+        there is 3hrs later than here. We create this app with our classes knowledge. 
+        It took us time to come up with the idea and design and frames because I was 
+        learnings them at the same time
+    </p>
+
+      <div class="section-title">Conclusion</div>
+      <p>
+       I think that never stop learning and learning. It is a hard thing to do but it can give you a 
+       lot of good things. We sometimes take for granted what teachers show us or teach us in the classroom,
+       but all big or small knowledge can lead to a great thing
+      </p>
+    </div>
+
+     <div class="images">
+      <img src="images/case 2/topplatee2.JPG" alt="Project image 3" /><br>
+      <img src="images/case 2/topplatee.JPG" alt="Project image 1" /><br>
+      <img src="images/case 2/topplatee1.JPG" alt="Project image 2" />
+      
+    </div>
+
+    <a class="back-link" href="porfolio.html">← Back to all projects</a>
+  </main>
+</body>
+</html>

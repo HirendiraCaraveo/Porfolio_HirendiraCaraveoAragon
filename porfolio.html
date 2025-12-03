@@ -1,0 +1,623 @@
+<!-- Main index.html linking to six project pages - Fun + Sophisticated Style -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Projects | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #050816;
+      --bg-soft: #0b1020;
+      --accent: #ff4f8b;
+      --accent-soft: rgba(255, 79, 139, 0.18);
+      --accent-2: #46e6ff;
+      --text-main: #f9fafb;
+      --text-muted: #9ca3af;
+      --card-radius: 18px;
+      --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.45);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 0% 0%, rgba(70, 230, 255, 0.18), transparent 55%),
+        radial-gradient(circle at 100% 100%, rgba(255, 79, 139, 0.18), transparent 55%),
+        var(--bg);
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 32px 16px;
+    }
+
+    .shell {
+      width: 100%;
+      max-width: 1120px;
+      background: radial-gradient(circle at top, rgba(255,255,255,0.06), transparent 55%), var(--bg-soft);
+      border-radius: 28px;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(148, 163, 184, 0.25);
+      padding: 32px 26px 30px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .shell::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, rgba(255, 79, 139, 0.18), transparent, rgba(70, 230, 255, 0.18));
+      mix-blend-mode: soft-light;
+      opacity: 0.9;
+      pointer-events: none;
+    }
+
+    .shell-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 30px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-logo {
+      width: 60px;
+      height: 60px;
+      border-radius: 16px;
+      background: conic-gradient(from 220deg, var(--accent), var(--accent-2), var(--accent));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 20px;
+      color: #020617;
+      box-shadow: 0 10px 25px rgba(255, 79, 139, 0.5);
+    }
+
+    .brand-text-primary {
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      font-size: 13px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .brand-text-secondary {
+      font-weight: 600;
+      font-size: 15px;
+    }
+
+    .pill {
+      border-radius: 999px;
+      padding: 8px 14px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      color: var(--text-muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(15, 23, 42, 0.8);
+      backdrop-filter: blur(16px);
+    }
+
+    .pill-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: var(--accent-2);
+      box-shadow: 0 0 0 4px rgba(70, 230, 255, 0.2);
+    }
+
+    .hero {
+      margin-bottom: 26px;
+    }
+
+    .hero-kicker {
+      font-size: 13px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent-2);
+      margin-bottom: 6px;
+    }
+
+    h1 {
+      font-size: clamp(28px, 3vw, 34px);
+      line-height: 1.2;
+      margin-bottom: 6px;
+      color:#ff4f8b;
+    }
+
+    .hero-subtitle {
+      font-size: 14px;
+      color: var(--text-muted);
+      max-width: 520px;
+    }
+
+    .projects-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+      font-size: 13px;
+      color: var(--text-muted);
+      flex-wrap: wrap;
+    }
+
+    .projects-bar span strong {
+      color: var(--text-main);
+    }
+
+    .view-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.55);
+      cursor: default;
+    }
+
+    .view-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: var(--accent);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      position: relative;
+      background: radial-gradient(circle at top left, rgba(255,255,255,0.06), transparent 55%), rgba(15, 23, 42, 0.96);
+      border-radius: var(--card-radius);
+      padding: 18px 16px 16px;
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      box-shadow: 0 10px 22px rgba(0, 0, 0, 0.45);
+      overflow: hidden;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+      cursor: pointer;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: -20%;
+      background: radial-gradient(circle at 0% 0%, rgba(255, 79, 139, 0.12), transparent 55%);
+      opacity: 0;
+      transition: opacity 0.2s ease;
+      pointer-events: none;
+    }
+
+    .card:hover {
+      transform: translateY(-6px) scale(1.01);
+      box-shadow: 0 22px 40px rgba(0, 0, 0, 0.6);
+      border-color: rgba(248, 250, 252, 0.8);
+      background: radial-gradient(circle at top right, rgba(70, 230, 255, 0.14), transparent 55%), rgba(15, 23, 42, 0.98);
+    }
+
+    .card:hover::before {
+      opacity: 1;
+    }
+
+    .card-label {
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent-2);
+      margin-bottom: 10px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .card-label span {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: var(--accent-2);
+    }
+
+    .card-title {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .card-tagline {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    .card-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 500;
+      text-decoration: none;
+      color: var(--accent);
+      background: var(--accent-soft);
+      padding: 7px 11px;
+      border-radius: 999px;
+      border: 1px solid rgba(248, 113, 113, 0.4);
+      transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card-link span {
+      font-size: 14px;
+      transform: translateY(1px);
+    }
+
+    .card:hover .card-link {
+      background: rgba(255, 79, 139, 0.24);
+      transform: translateX(2px);
+      box-shadow: 0 10px 25px rgba(255, 79, 139, 0.4);
+    }
+
+    .card-meta-right {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    footer {
+      margin-top: 24px;
+      padding-top: 14px;
+      border-top: 1px solid rgba(51, 65, 85, 0.9);
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      font-size: 11px;
+      color: var(--text-muted);
+      flex-wrap: wrap;
+    }
+
+    .footer-right {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 900px) {
+      .shell {
+        padding: 24px 18px 22px;
+        border-radius: 24px;
+      }
+
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 16px;
+      }
+
+      .shell {
+        padding: 22px 16px 20px;
+        border-radius: 20px;
+      }
+
+      .grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      footer {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <div class="shell-inner">
+      <header>
+        <div class="brand">
+          <div class="brand-logo">HCA</div>
+          <div>
+            <div class="brand-text-primary">Personal Portfolio</div>
+            <div class="brand-text-secondary">Six-Project Collection</div>
+          </div>
+        </div>
+        <div class="pill">
+          <span class="pill-dot"></span>
+          UVU
+        </div>
+      </header>
+
+      <section class="hero">
+        <div class="hero-kicker">Projects · Web · UI · Experiments</div>
+        <h1>Hirendira Caraveo Aragon.</h1>
+        <p class="hero-subtitle">
+          Six curated pieces of work. Each project opens in a dedicated page with space for details,
+          screenshots, and process notes.
+        </p>
+      </section>
+
+      <div class="projects-bar">
+        <span><strong>6 projects</strong></span>
+        <div class="view-toggle">
+          <span class="view-dot"></span>
+          Porfolio · Detail view on click
+        </div>
+      </div>
+
+      <section class="grid">
+        <article class="card" onclick="location.href='project1.html'">
+          <div class="card-label"><span></span>Project One</div>
+          <h2 class="card-title">First website</h2>
+          <p class="card-tagline">Getting to know HTML and CSS.</p>
+          <div class="card-meta">
+            <a class="card-link" href="project1.html">Open project <span>↗</span></a>
+            <div class="card-meta-right">
+              <span>UI · Web</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" onclick="location.href='project2.html'">
+          <div class="card-label"><span></span>Project Two</div>
+          <h2 class="card-title">TopPlate</h2>
+          <p class="card-tagline">An app to help you to find a place to eat.</p>
+          <div class="card-meta">
+            <a class="card-link" href="project2.html">Open project <span>↗</span></a>
+            <div class="card-meta-right">
+              <span>Brand · Web</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" onclick="location.href='project3.html'">
+          <div class="card-label"><span></span>Project Three</div>
+          <h2 class="card-title">Web Combination </h2>
+          <p class="card-tagline">...</p>
+          <div class="card-meta">
+            <a class="card-link" href="project3.html">Open project <span>↗</span></a>
+            <div class="card-meta-right">
+              <span>UX · Layout</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" onclick="location.href='project4.html'">
+          <div class="card-label"><span></span>Project Four</div>
+          <h2 class="card-title">kookie page</h2>
+          <p class="card-tagline">....</p>
+          <div class="card-meta">
+            <a class="card-link" href="project4.html">Open project <span>↗</span></a>
+            <div class="card-meta-right">
+              <span>Case Study</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" onclick="location.href='project5.html'">
+          <div class="card-label"><span></span>Project Five</div>
+          <h2 class="card-title">Typescript t</h2>
+          <p class="card-tagline">First project.</p>
+          <div class="card-meta">
+            <a class="card-link" href="project5.html">Open project <span>↗</span></a>
+            <div class="card-meta-right">
+              <span>Case Study</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" onclick="location.href='project6.html'">
+          <div class="card-label"><span></span>Project Six</div>
+          <h2 class="card-title">Ramdy Car Services LLC</h2>
+          <p class="card-tagline">Create Logo, Website and more for this company.</p>
+          <div class="card-meta">
+            <a class="card-link" href="project6.html">Open project <span>↗</span></a>
+            <div class="card-meta-right">
+              <span>Case Study</span>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <footer>
+        <span>© <span id="year"></span> · Hirendira Caraveo Aragon ·  DWDD 2950  ·   All rights reserved.</span>
+        <div class="footer-right">
+          <span>UVU</span>
+          
+        </div>
+      </footer>
+    </div>
+  </main>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+
+
+<!-- Example: project1.html -->
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project 1 · Neon Landing Page</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #050816;
+      --accent: #ff4f8b;
+      --accent-2: #46e6ff;
+      --text-main: #f9fafb;
+      --text-muted: #9ca3af;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 0% 0%, rgba(70, 230, 255, 0.18), transparent 55%),
+        radial-gradient(circle at 100% 100%, rgba(255, 79, 139, 0.18), transparent 55%),
+        var(--bg);
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 32px 16px;
+    }
+
+    .page-shell {
+      width: 100%;
+      max-width: 900px;
+      background: rgba(15, 23, 42, 0.96);
+      border-radius: 24px;
+      padding: 28px 22px 24px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.55);
+    }
+
+    .kicker {
+      font-size: 12px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent-2);
+      margin-bottom: 6px;
+    }
+
+    h1 {
+      font-size: clamp(26px, 3vw, 32px);
+      margin-bottom: 6px;
+    }
+
+    .meta {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 18px;
+    }
+
+    .badge {
+      border-radius: 999px;
+      padding: 4px 10px;
+      border: 1px solid rgba(148, 163, 184, 0.8);
+    }
+
+    .body {
+      font-size: 14px;
+      color: var(--text-main);
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .section-title {
+      font-size: 14px;
+      font-weight: 600;
+      margin-top: 12px;
+      margin-bottom: 4px;
+    }
+
+    ul {
+      margin-left: 18px;
+      margin-top: 4px;
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+
+    a {
+      color: var(--accent-2);
+      text-decoration: none;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      margin-top: 8px;
+    }
+  </style>
+</head>
+<body>
+  <main class="page-shell">
+    <div class="kicker">Project 1</div>
+    <h1>Neon Landing Page</h1>
+    <div class="meta">
+      <span class="badge">UI · Web</span>
+      <span>Role: Designer &amp; Developer</span>
+    </div>
+
+    <div class="body">
+      <p>
+        Describe your project here. You can talk about the goal, audience, and the design decisions you made
+        to keep it fun and sophisticated.
+      </p>
+
+      <div class="section-title">Highlights</div>
+      <ul>
+        <li>Glowing call-to-action button with hover animation.</li>
+        <li>Responsive layout that looks great on mobile and desktop.</li>
+        <li>Color palette that balances bold neon with deep navy tones.</li>
+      </ul>
+
+      <div class="section-title">Process Notes</div>
+      <p>
+        Share how you researched, sketched, prototyped, or tested this project. This is a perfect place for
+        screenshots or embedded images if you add them later.
+      </p>
+    </div>
+
+    <a class="back-link" href="index.html">← Back to all projects</a>
+  </main>
+</body>
+</html>
+-->
